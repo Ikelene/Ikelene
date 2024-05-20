@@ -6,4 +6,10 @@
 - ⚡ Fun fact: sike! no fun fact for you
 
 # SUBSCRIBE TO [IKELENE] ON YOUTUBE
-www.youtube.com/@ikelene69
+
+<div align="left">
+	<p>
+		<a href="https://guilded.gg/ikelene"><img src="https://img.shields.io/badge/chat-Join!-yellow?style=for-the-badge&logo=guilded&logoColor=white" alt="Guilded Server" /></a>
+		<a href="https://youtube.com/@ikelene69"><img src="https://img.shields.io/badge/YouTube-%5BIkelene%5D-red?style=for-the-badge&logo=youtube&logoColor=white" alt="YouTube Channel" /></a>
+	</p>
+</div>
