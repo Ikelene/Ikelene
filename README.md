@@ -1,9 +1,12 @@
 - 👋 Hi, I’m @Ikelene
 - 👀 I’m interested in gaming and coding
 - 🌱 I’m currently learning Java
-- 📫 How to reach me, email christopherh2480@gmail.com
-- 😄 Pronouns: Why tf you even looking at this bruh fucking pedo
+- 📫 How to reach me, email `support@ikelene.ca`
+- 📄 Or for sponsors/partners `partners@ikelene.ca`
+- 😄 Pronouns: Why tf you even looking at this bruh
 - ⚡ Fun fact: sike! no fun fact for you
+- 🌐 Website: https://ikelene.ca
+- 🛍️ Online store: https://shop.ikelene.ca
 
 # SUBSCRIBE TO [IKELENE] ON YOUTUBE
 
