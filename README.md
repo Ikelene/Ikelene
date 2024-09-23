@@ -1,5 +1,6 @@
 [![gaming](https://github-readme-stats.vercel.app/api?username=ikelene)](https://github.com/anuraghazra/github-readme-stats)
-- 👀 I’m interested in gaming and coding
+- 🖥️ I’m interested in gaming and coding
+- 💽 I like physical media
 - 🌱 I’m currently learning Java
 - 📫 How to reach me, email `support@ikelene.ca`
 - 📄 Or for sponsors/partners `partners@ikelene.ca`
