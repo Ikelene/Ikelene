@@ -1,10 +1,8 @@
-- 👋 Hi, I’m @Ikelene
+[![gaming](https://github-readme-stats.vercel.app/api?username=ikelene)](https://github.com/anuraghazra/github-readme-stats)
 - 👀 I’m interested in gaming and coding
 - 🌱 I’m currently learning Java
 - 📫 How to reach me, email `support@ikelene.ca`
 - 📄 Or for sponsors/partners `partners@ikelene.ca`
-- 😄 Pronouns: Why tf you even looking at this bruh
-- ⚡ Fun fact: sike! no fun fact for you
 - 🌐 Website: https://ikelene.ca
 - 🛍️ Online store: https://shop.ikelene.ca
 
