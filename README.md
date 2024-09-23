@@ -1,4 +1,4 @@
-[![gaming](https://github-readme-stats.vercel.app/api?username=ikelene)](https://github.com/anuraghazra/github-readme-stats)
+[![gaming](https://github-readme-stats.vercel.app/api?username=ikelene)](https://ikelene.ca)
 - 🖥️ I’m interested in gaming and coding
 - 💽 I like physical media
 - 🌱 I’m currently learning Java
