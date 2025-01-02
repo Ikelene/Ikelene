@@ -1,7 +1,7 @@
 [![gaming](https://github-readme-stats.vercel.app/api?username=ikelene)](https://ikelene.ca)
 - 🖥️ I’m interested in gaming and coding
 - 💽 I like physical media
-- 🌱 I’m currently learning Java
+- 🌱 I know some Java, Lua, and TI-BASIC (The programming language for the TI-84 Plus CE)
 - 📫 How to reach me, email `support@ikelene.ca`
 - 📄 Or for sponsors/partners `partners@ikelene.ca`
 - 🌐 Website: https://ikelene.ca
