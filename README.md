@@ -7,8 +7,6 @@
 - 🌐 Website: https://ikelene.ca
 - 🛍️ Online store: https://shop.ikelene.ca
 
-# SUBSCRIBE TO [IKELENE] ON YOUTUBE
-
 <div align="left">
 	<p>
 		<a href="https://guilded.gg/ikelene"><img src="https://img.shields.io/badge/chat-Join!-yellow?style=for-the-badge&logo=guilded&logoColor=white" alt="Guilded Server" /></a>
