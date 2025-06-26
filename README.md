@@ -1,4 +1,5 @@
 [![gaming](https://github-readme-stats.vercel.app/api?username=ikelene)](https://ikelene.ca)
+- 🏳️‍⚧️ Trans girl
 - 🖥️ I’m interested in gaming and coding
 - 💽 I like physical media
 - 🌱 I know some Java, Lua, and TI-BASIC (The programming language for the TI-84 Plus CE)
