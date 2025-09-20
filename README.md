@@ -13,4 +13,4 @@
     </p>
 </sub>
 
-- 🏳️‍⚧️ Transfem
+- shitposting
