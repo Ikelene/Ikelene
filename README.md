@@ -10,5 +10,5 @@
 </sub>
 
 - shitposting
-- im a femboy
+- im a trans girl
 - i suck at programming (but still better than most people
