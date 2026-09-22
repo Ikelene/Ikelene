@@ -8,7 +8,3 @@
         </i>
     </p>
 </sub>
-
-- shitposting
-- im a trans girl
-- i suck at programming (but still better than most people
