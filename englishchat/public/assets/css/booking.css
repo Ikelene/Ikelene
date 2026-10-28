@@ -1,0 +1,205 @@
+/* Booking form – recreates the look of the Bookly form used on the old site
+   (Bookly is GPLv3; class names and layout rules follow its stylesheet,
+   colours/fonts are the theme overrides measured on the live site). */
+
+.bookly-form {
+  --bk: #5c6c9f;
+  --slate-100: #f1f5f9;
+  --slate-400: #90a1b9;
+  --slate-600: #45556c;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: #011031;
+  text-align: left;
+}
+.bookly-form * { box-sizing: border-box; font-family: inherit; font-size: 14px; line-height: inherit; }
+.bookly-form b { font-weight: 700; }
+.bookly-form *:focus { outline: 0; box-shadow: 0 0 1px 0 rgba(37, 0, 255, 1) inset; }
+.bookly-form ::placeholder { color: #bbb; opacity: 1; }
+
+.bookly-box { margin: 0 0 20px; overflow: hidden; }
+.bookly-bold { font-weight: 700; }
+.bookly-right { float: right !important; }
+.bookly-left { float: left !important; }
+.bookly-table { display: table; table-layout: fixed; width: 100%; }
+.bookly-table > * { display: table-cell; vertical-align: top; width: auto; }
+
+/* Progress tracker */
+.bookly-progress-tracker { display: table; table-layout: fixed; width: 100%; margin: 0 0 20px; padding: 0; font-weight: 700; }
+.bookly-progress-tracker > div { display: table-cell; padding-left: 4px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; color: #011031; }
+.bookly-progress-tracker > div:first-child { padding-left: 0; }
+.bookly-progress-tracker > div.active { color: var(--bk); }
+.bookly-progress-tracker .step { height: 15px; margin-top: 5px; background: #bec3c7; }
+.bookly-progress-tracker > div.active .step { background: var(--bk); }
+.bookly-progress-tracker > div:first-child .step { border-radius: 5px 0 0 5px; }
+.bookly-progress-tracker > div:last-child .step { border-radius: 0 5px 5px 0; }
+ol.bookly-stepper { display: none; }
+
+/* Form controls */
+.bookly-form-group > label { display: inline-block; padding: 0; margin: 0; font-weight: 700; color: var(--bk); }
+.bookly-form-group > div { margin-top: 5px; }
+.bookly-table > .bookly-form-group:not(:last-child) > div { margin-right: 14px; }
+.bookly-form label { font-size: 14px; }
+.bookly-form input[type="text"], .bookly-form input[type="tel"], .bookly-form input[type="email"], .bookly-form select, .bookly-form textarea {
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  border: 1px solid silver;
+  border-radius: 4px;
+  background: #fff;
+  color: #a0a0a0;
+  font-size: 14px;
+  line-height: normal;
+  transition: all .25s;
+}
+.bookly-form input[type="text"], .bookly-form input[type="tel"], .bookly-form input[type="email"], .bookly-form textarea { padding: 6px 7px 5px; }
+.bookly-form select { height: 19px; vertical-align: top; padding: 0 13px; -webkit-appearance: none; appearance: none; cursor: default; }
+.bookly-form textarea { resize: vertical; display: block; }
+.bookly-form .bookly-error { border: 2px solid var(--bk) !important; }
+.bookly-label-error { margin-top: 5px; color: var(--bk); font-size: 12px !important; font-weight: 700; }
+.bookly-box.bookly-label-error { margin-top: 0; }
+
+/* Buttons */
+.bookly-btn {
+  position: relative;
+  display: block;
+  min-width: 118px;
+  padding: 9px 18px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--bk);
+  color: #fff;
+  font-family: Merriweather, Georgia, serif !important;
+  font-size: 18px !important;
+  font-weight: 700;
+  line-height: 17px !important;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all .3s;
+}
+.bookly-btn > span { color: #fff; font-size: 18px !important; line-height: 17px !important; font-weight: 700; }
+.bookly-btn[disabled] { opacity: .5; cursor: default; }
+.bookly-nav-steps { padding-top: 20px; border-top: 1px solid silver; overflow: hidden; }
+.bookly-box.bookly-nav-steps { margin: 0 -5px 10px; }
+.bookly-box.bookly-nav-steps button { margin: 0 5px 10px; }
+.bookly-nav-steps .bookly-back-step { float: left; }
+.bookly-nav-steps .bookly-next-step { float: right; }
+.bookly-details-step > .bookly-box:last-child { margin-bottom: 0; }
+.bookly-time-next, .bookly-time-prev { min-width: 60px; height: 35px; padding: 0 5px; }
+.bookly-time-next svg, .bookly-time-prev svg { width: 18px; height: 18px; vertical-align: middle; fill: #fff; }
+
+/* Spinner (replaces Ladda "zoom-in") */
+.ladda-label { display: inline-block; transition: transform .3s, opacity .3s; }
+.ladda-spinner { position: absolute; top: 50%; left: 50%; width: 22px; height: 22px; margin: -11px 0 0 -11px; border: 3px solid rgba(255, 255, 255, .35); border-top-color: #fff; border-radius: 50%; opacity: 0; pointer-events: none; }
+.is-loading .ladda-label { transform: scale(2.2); opacity: 0; }
+.is-loading .ladda-spinner { opacity: 1; animation: bk-spin .7s linear infinite; }
+.bookly-hour .ladda-spinner { border-color: rgba(92, 108, 159, .3); border-top-color: var(--bk); }
+@keyframes bk-spin { to { transform: rotate(360deg); } }
+
+/* Time step: calendar */
+.bookly-slot-calendar { float: left; width: 200px; min-width: 200px; margin: 1.5px 20px 20px 0; }
+.bk-cal { width: 100%; padding: 1.25px; border: 1px solid var(--slate-100); border-radius: 5px; background: #fff; user-select: none; }
+.bk-cal__controls { display: flex; margin-bottom: 1.25px; padding-bottom: 1.25px; border-bottom: 1px solid var(--slate-100); color: var(--slate-600); }
+.bk-cal__btn { display: flex; align-items: center; justify-content: center; height: 25px; padding: 0 10px; border: 0; border-radius: 0; background: none; color: var(--slate-600); font-size: 12.5px !important; cursor: pointer; }
+.bk-cal__btn svg { width: 12px; height: 12px; fill: currentColor; }
+.bk-cal__btn--title { flex: 1; font-size: 14px !important; }
+.bk-cal__btn:hover:not([disabled]) { background: var(--bk); color: #fff; }
+.bk-cal__btn[disabled] { opacity: .5; pointer-events: none; }
+.bk-cal__dow { display: flex; padding: 3px 0; margin-bottom: 1.25px; border-bottom: 1px solid var(--slate-100); }
+.bk-cal__dow > div { flex: 1; text-align: center; font-size: 10px !important; line-height: 14.3px; color: var(--slate-600); }
+.bk-cal__row { display: flex; }
+.bk-cal__day { flex: 1; display: flex; align-items: center; justify-content: center; height: 25px; padding: 5px 0; border: 0; border-radius: 0; background: transparent; color: var(--bk); font-size: 10px !important; line-height: 10px !important; cursor: pointer; }
+.bk-cal__day:hover { background: var(--bk); color: #fff; opacity: .8; }
+.bk-cal__day[disabled] { background: var(--slate-100); opacity: .5; pointer-events: none; }
+.bk-cal__day.is-other { color: var(--slate-400); }
+.bk-cal__day.is-selected { background: var(--bk); color: #fff; }
+.bk-cal__months { display: grid; grid-template-columns: repeat(3, 1fr); }
+.bk-cal__months .bk-cal__day { height: 40px; font-size: 13px !important; }
+.bk-cal.is-loading { opacity: .6; pointer-events: none; }
+
+/* Time step: slots */
+.bookly-time-step { position: relative; overflow: hidden; margin-bottom: 20px; }
+.bookly-columnizer { white-space: nowrap; position: relative; min-height: .01%; }
+.bookly-column { display: inline-block; vertical-align: top; min-width: 127px; padding: 0 5px; white-space: normal; }
+.bookly-day, .bookly-hour {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 36px;
+  margin: 1.5px 0;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fff;
+  font-family: Merriweather, Georgia, serif !important;
+  font-size: 13px !important;
+  line-height: 20px;
+  text-align: center;
+  color: #011031;
+}
+.bookly-day { background: var(--bk); border-color: var(--bk); color: #fff; font-weight: 700; cursor: default; }
+.bookly-hour { cursor: pointer; }
+.bookly-hour span { font-family: Merriweather, Georgia, serif !important; font-weight: 400; color: #333; }
+.bookly-hour .ladda-label { display: inline-block; min-width: 92px; font-size: 14px !important; }
+.bookly-hour-icon { display: block; float: left; width: 16px; height: 16px; margin: 2px 3px 0 0; border-radius: 100%; outline: 2px solid #eee; }
+.bookly-hour-icon span { display: block; }
+.bookly-hour:hover { border: 2px solid var(--bk); color: var(--bk); }
+.bookly-hour:hover span { color: var(--bk); }
+.bookly-hour:hover .bookly-hour-icon { outline-color: var(--bk); }
+.bookly-hour:hover .bookly-hour-icon span { width: 8px; height: 8px; margin: 4px; border-radius: 100%; background: var(--bk); }
+.bookly-not-time-screen { margin-bottom: 20px; }
+
+/* Details step */
+.bookly-details-step .iti { display: block; width: 100%; }
+.bookly-details-step .iti input[type="tel"] { padding-left: 52px; }
+.bookly-checkbox-group { line-height: 28px; }
+.bookly-checkbox-group > input[type="checkbox"] { position: absolute; width: 0; height: 0; opacity: 0; }
+.bookly-checkbox-group label { font-weight: 700; cursor: pointer; }
+.bookly-checkbox-group label.bookly-checkbox { display: block; float: left; width: 28px; height: 28px; margin: 0 5px 0 0; border-radius: 15%; }
+.bookly-checkbox-group label.bookly-checkbox i { display: block; width: 28px; height: 28px; border: 2px solid var(--bk); border-radius: 4px; background-repeat: no-repeat; background-size: cover; }
+.bookly-checkbox-group > input:checked + label > i { background-color: var(--bk); background-image: url(../img/check-square.svg); }
+.bookly-checkbox-group > input:focus-visible + label > i { box-shadow: 0 0 1px 0 rgba(37, 0, 255, 1) inset; }
+.bookly-checkbox-group label:nth-of-type(2) { margin-left: 4px; }
+
+/* Payment step */
+.bookly-payment-nav .bookly-list { margin-left: 10px; }
+.bookly-payment-nav label { cursor: pointer; font-size: 14px; }
+.bookly-payment-nav label > * { vertical-align: middle; }
+.bookly-payment-nav input[type="radio"] { margin: 0 6px 0 0; accent-color: var(--bk); }
+.bookly-payment-nav img { margin-left: 10px; height: 24px; width: auto; }
+.bk-card { max-width: 420px; }
+.bk-card .bookly-form-group { margin-bottom: 14px; }
+.bk-stripe-el { padding: 8px 7px; border: 1px solid silver; border-radius: 4px; background: #fff; }
+.bk-card__row { display: flex; gap: 14px; }
+.bk-card__row > * { flex: 1; }
+.bk-test-note { font-size: 12px !important; color: #8a6d3b; background: #fcf8e3; border: 1px solid #faebcc; border-radius: 4px; padding: 6px 10px; margin-bottom: 14px; }
+
+/* Responsive (Bookly switches to its mobile layout below 650px) */
+@media screen and (max-width: 650px) {
+  .bookly-table > * { display: block; }
+  .bookly-table .bookly-form-group { margin: 0 0 20px; width: 100% !important; }
+  .bookly-table .bookly-form-group:last-child { margin: 0; }
+  .bookly-table > .bookly-form-group:not(:last-child) > div { margin-right: 0; }
+  .bookly-progress-tracker { display: none !important; }
+  .bookly-form ol.bookly-stepper {
+    display: flex !important;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0 0 20px;
+    padding: 4px;
+    overflow: hidden;
+    background: linear-gradient(180deg, transparent 15.9px, silver 16px, silver 17.9px, transparent 18px);
+  }
+  .bookly-form ol.bookly-stepper li { display: grid; position: relative; }
+  .bookly-form ol.bookly-stepper li::before {
+    content: " "; display: grid; aspect-ratio: 1; height: 24px; z-index: 1;
+    border: 2px solid var(--bk); border-radius: 50%; background: var(--bk); outline: 4px solid #fff;
+  }
+  .bookly-form ol.bookly-stepper li.bookly-step-active ~ li::before { background: #fff; border-color: silver; }
+  .bookly-form ol.bookly-stepper li.bookly-step-active::after { content: ""; position: absolute; right: 100%; top: 11px; height: 2px; width: 100vw; background: var(--bk); }
+  .bookly-slot-calendar { float: none; margin: 0 auto 20px; }
+  .bookly-btn { min-width: 0; }
+  .bookly-service-step .bookly-table.bookly-box { margin-bottom: 0; }
+}

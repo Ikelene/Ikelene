@@ -1,0 +1,13 @@
+{
+  "name": "englishchat-site",
+  "private": true,
+  "description": "englishchat.co.uk without WordPress: static pages + small PHP booking/contact backend",
+  "scripts": {
+    "build": "node build/build.mjs",
+    "dev": "node build/build.mjs && php -S 127.0.0.1:8080 -t public dev/router.php",
+    "test": "node tests/e2e.js"
+  },
+  "devDependencies": {
+    "playwright": "^1.47.0"
+  }
+}

@@ -1,0 +1,32 @@
+<!--{"title":"Reject Appointment – englishchat.co.uk","noindex":true}-->
+<div class="container">
+  {{sp 40 0 0}}
+  <h2 class="text-center">Hi Louise!</h2>
+  {{sp 75 75 75}}
+</div>
+<section class="section-fill">
+  <div class="container">
+    {{sp 65 30 0}}
+    <div class="row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8">
+        <div class="text-block"><h4 class="text-center">Appointment Rejected</h4></div>
+        <p class="appointment-detail text-center" id="appointment-detail" hidden></p>
+        {{sp 50 50 50}}
+      </div>
+      <div class="col-sm-2"></div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4"><figure class="plain-img text-center mb-35"><img src="/assets/img/English-Chat-1-150x150.png" srcset="/assets/img/English-Chat-1-300x300.png 2x" width="150" height="150" alt="" title="English-Chat" decoding="async"></figure></div>
+      <div class="col-sm-4"></div>
+    </div>
+    {{sp 50 30 0}}
+    <div class="text-center"><a href="/#booking" class="btn" title="Back to Booking">Back to Booking</a></div>
+    {{sp 50 30 0}}
+  </div>
+</section>
+<script>
+// Shows which appointment was just approved/rejected (passed by /api/appointment-action.php).
+(function(){var q=new URLSearchParams(location.search).get('appointment');if(q){var e=document.getElementById('appointment-detail');e.textContent=q;e.hidden=false;}})();
+</script>

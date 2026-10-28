@@ -1,0 +1,3 @@
+# This folder must never be served. Keep it outside the web root if you can.
+Require all denied
+Deny from all

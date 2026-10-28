@@ -1,0 +1,5 @@
+# Secrets and runtime data
+private/config.php
+private/data/*
+!private/data/.htaccess
+node_modules/
